@@ -1,6 +1,7 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import './Header.css';
 import { useCart } from '../context/CartContext';
+import { NavLink } from 'react-router-dom';
+import './Header.css';
 
 const Header = ({toggleCart}) => {
 
@@ -11,15 +12,15 @@ const Header = ({toggleCart}) => {
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
         <Container>
           <Nav className="mx-auto gap-5 header-names">
-            <Nav.Link href="#home" style={{ color: 'white' }}>
+            <NavLink to="/home" style={{ color: 'white' }}>
               Home
-            </Nav.Link>
-            <Nav.Link href="#store" style={{ color: 'white' }}>
+            </NavLink>
+            <NavLink to="/store" style={{ color: 'white' }}>
               Store
-            </Nav.Link>
-            <Nav.Link href="#about" style={{ color: 'white' }}>
+            </NavLink>
+            <NavLink to="/about" style={{ color: 'white' }}>
               About
-            </Nav.Link>
+            </NavLink>
           </Nav>
           <Nav>
             <button onClick={toggleCart} className="bg-dark border border-info rounded py-1 px-3 text-light text-decoration-none">
