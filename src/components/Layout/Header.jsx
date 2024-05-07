@@ -1,8 +1,8 @@
-import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import './Header.css'
+import './Header.css';
 
-const Header = () => {
+const Header = ({toggleCart}) => {
+
   return (
     <header>
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
@@ -19,7 +19,7 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <button className="bg-dark border border-info rounded py-1 px-3 text-light text-decoration-none">
+            <button onClick={toggleCart} className="bg-dark border border-info rounded py-1 px-3 text-light text-decoration-none">
               Cart <span>0</span>
             </button>
           </Nav>
@@ -28,6 +28,6 @@ const Header = () => {
       <h1>The Generics</h1>
     </header>
   );
-}
+};
 
 export default Header
