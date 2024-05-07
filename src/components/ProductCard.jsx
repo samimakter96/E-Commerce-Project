@@ -1,7 +1,12 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product, addToCart}) => {
+
+  const handleAddToCart = () => {
+    addToCart(product)
+  }
+
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Text
@@ -37,6 +42,7 @@ const ProductCard = ({product}) => {
             marginTop: '10px',
           }}
           variant="primary"
+          onClick={handleAddToCart}
         >
           Add to Cart
         </Button>

@@ -11,17 +11,17 @@ const Footer = () => {
       <div className="footer-icons">
         <ul>
           <li>
-            <a href="https://www.youtube.com" target="blank">
+            <a href="https://www.youtube.com" target="_self">
               <FaYoutube />
             </a>
           </li>
           <li>
-            <a href="https://spotify.com" target="blank">
+            <a href="https://spotify.com" target="_self">
               <FaSpotify />
             </a>
           </li>
           <li>
-            <a href="https://facebook.com" target="blank">
+            <a href="https://facebook.com" target="_self">
               <FaFacebook />
             </a>
           </li>

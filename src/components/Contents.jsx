@@ -2,8 +2,12 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { PRODUCTS } from '../Products';
 import ProductCard from './ProductCard';
+import { useCart } from './context/CartContext';
 
 const Contents = () => {
+
+  const {addToCart} = useCart()
+
   return (
     <>
       <section
@@ -39,7 +43,7 @@ const Contents = () => {
                   justifyContent: 'center',
                 }}
               >
-                <ProductCard product={product}/>
+                <ProductCard product={product} addToCart={addToCart}/>
               </Col>
             ))}
           </Row>

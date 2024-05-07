@@ -1,7 +1,10 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import './Header.css';
+import { useCart } from '../context/CartContext';
 
 const Header = ({toggleCart}) => {
+
+  const {cart} = useCart()
 
   return (
     <header>
@@ -20,7 +23,7 @@ const Header = ({toggleCart}) => {
           </Nav>
           <Nav>
             <button onClick={toggleCart} className="bg-dark border border-info rounded py-1 px-3 text-light text-decoration-none">
-              Cart <span>0</span>
+              Cart <span>{cart.length}</span>
             </button>
           </Nav>
         </Container>

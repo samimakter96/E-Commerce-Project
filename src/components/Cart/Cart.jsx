@@ -1,30 +1,14 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useCart } from '../context/CartContext';
 
 function Cart({ closeCart }) {
-  const cartElements = [
-    {
-      title: 'Colors',
-      price: 100,
-      imageUrl:
-        'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-      quantity: 2,
-    },
-    {
-      title: 'Black and white Colors',
-      price: 50,
-      imageUrl:
-        'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-      quantity: 3,
-    },
-    {
-      title: 'Yellow and Black Colors',
-      price: 70,
-      imageUrl:
-        'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-      quantity: 1,
-    },
-  ];
+
+  const { cart, removeFromCart } = useCart();
+
+  const handleRemoveFromCart = (item) => {
+    removeFromCart(item);
+  }
 
   return (
     <div
@@ -65,7 +49,7 @@ function Cart({ closeCart }) {
         X
       </Button>
       {/* Map through cart elements and display them */}
-      {cartElements.map((item) => (
+      {cart.map((item) => (
         <div
           key={item.title}
           style={{
@@ -94,6 +78,7 @@ function Cart({ closeCart }) {
               variant="danger"
               size="sm"
               style={{ backgroundColor: 'red', padding: '5px' }}
+              onClick={() => handleRemoveFromCart(item)}
             >
               Remove
             </Button>
