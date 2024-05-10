@@ -9,6 +9,7 @@ import About from './pages/About/About';
 import ContactUs from './pages/contact/ContactUs';
 import { CartProvider } from './components/context/CartContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProductDetail from './pages/ProductPage/ProductDetails';
 
 function App() {
   const [showCart, setShowCart] = useState(false);
@@ -32,6 +33,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path='/contact' element={<ContactUs />} />
+            <Route path='/product/:productId' element={<ProductDetail />} />
           </Routes>
           <Footer />
           {showCart && <Cart closeCart={closeCart} />}

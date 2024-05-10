@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({product, addToCart}) => {
 
@@ -21,7 +22,9 @@ const ProductCard = ({product, addToCart}) => {
       >
         {product.title}
       </Card.Text>
-      <Card.Img variant="top" src={product.imageUrl} />
+      <Link to={`/product/${product.id}`}>
+        <Card.Img variant="top" src={product.imageUrl} />
+      </Link>
       <Card.Body
         style={{
           display: 'flex',
@@ -32,18 +35,7 @@ const ProductCard = ({product, addToCart}) => {
         <div>
           <Card.Text>${product.price}</Card.Text>
         </div>
-        <Button
-          style={{
-            border: '1px solid blue',
-            backgroundColor: 'blue',
-            color: 'white',
-            borderRadius: '0px',
-            padding: '0px 10px',
-            marginTop: '10px',
-          }}
-          variant="primary"
-          onClick={handleAddToCart}
-        >
+        <Button className="addToCart-btn" onClick={handleAddToCart}>
           Add to Cart
         </Button>
       </Card.Body>
