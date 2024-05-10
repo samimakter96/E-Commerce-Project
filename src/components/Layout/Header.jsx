@@ -12,14 +12,17 @@ const Header = ({toggleCart}) => {
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
         <Container>
           <Nav className="mx-auto gap-5 header-names">
-            <NavLink to="/home" style={{ color: 'white' }}>
+            <NavLink to="/home" className="nav-link">
               Home
             </NavLink>
-            <NavLink to="/store" style={{ color: 'white' }}>
+            <NavLink to="/store" className="nav-link">
               Store
             </NavLink>
-            <NavLink to="/about" style={{ color: 'white' }}>
+            <NavLink to="/about" className="nav-link">
               About
+            </NavLink>
+            <NavLink to="/contact" className="nav-link">
+              Contact Us
             </NavLink>
           </Nav>
           <Nav>
