@@ -60,7 +60,7 @@ const ContactUs = () => {
       <form
         onSubmit={handleSubmit}
       >
-        <div style={{ width: '50%', margin: '0 auto' }}>
+        <div style={{ width: '40%', margin: '2rem auto' }}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
               Name

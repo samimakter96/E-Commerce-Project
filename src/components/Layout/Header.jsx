@@ -24,6 +24,9 @@ const Header = ({toggleCart}) => {
             <NavLink to="/contact" className="nav-link">
               Contact Us
             </NavLink>
+            <NavLink to="/login" className="nav-link">
+              LogIn
+            </NavLink>
           </Nav>
           <Nav>
             <button onClick={toggleCart} className="bg-dark border border-info rounded py-1 px-3 text-light text-decoration-none">
